@@ -79,6 +79,10 @@
 
 
 
+        <a-asset-item id="easteregg-obj" src="/models/easteregg.obj"></a-asset-item>
+        <a-asset-item id="easteregg-mtl" src="/models/easteregg.mtl"></a-asset-item>
+
+
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
 
@@ -217,6 +221,11 @@
       <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity> -->
 
       <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+
+        <a-entity obj-model="obj: #easteregg-obj; mtl: #easteregg-mtl"></a-entity>
+
+
       <a-entity id="particles" particle-system="preset: snow"></a-entity>
 
         <a-plane src="#grass" height="100" width="100" rotation="-90 0 0"></a-plane>
