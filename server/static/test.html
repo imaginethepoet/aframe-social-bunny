@@ -5,7 +5,7 @@
     <script src="easyrtc/easyrtc.js"></script>
     <script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
 
-<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.3.4/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.3.4/dist/aframe-extras.min.js"></script>
 
 
     <script src="https://rawgit.com/impronunciable/aframe-chartbuilder-component/master/dist/aframe-chartbuilder-component.min.js"></script>
@@ -73,12 +73,16 @@
     ">
       <a-assets>
 
+
+        <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
+        <!--<img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />-->
+
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
 
-        <a-asset-item id="bunny-obj" src="/models/rabbit.obj"></a-asset-item>
-        <a-asset-item id="bunny-mtl" src="/models/rabbit.mtl"></a-asset-item>
-        <a-asset-item id="pinkbunny-obj" src="/models/pinkbunny.obj"></a-asset-item>
-        <a-asset-item id="pinkbunny-mtl" src="/models/pinkbunny.mtl"></a-asset-item>
+        <a-asset-item id="bunny-obj" src="models/rabbit.obj"></a-asset-item>
+        <a-asset-item id="bunny-mtl" src="models/rabbit.mtl"></a-asset-item>
+        <a-asset-item id="pinkbunny-obj" src="models/pinkbunny.obj"></a-asset-item>
+        <a-asset-item id="pinkbunny-mtl" src="models/pinkbunny.mtl"></a-asset-item>
 
         <a-asset-item id="easteregg-obj" src="/models/easteregg.obj"></a-asset-item>
         <a-asset-item id="easteregg-mtl" src="/models/easteregg.mtl"></a-asset-item>
@@ -97,17 +101,15 @@
               random-color
             ></a-sphere>-->
             <a-entity color="#5985ff" class="head" 
-              scale="0.45 0.5 0.4"
-              >
+              scale="0.45 0.5 0.4">
                 <a-obj-model 
-                    random-color
+                    animation-mixer
                     rotation="0 180 0"
                     position="0 -1.79 -0.10"
                     scale="1.2 1.2 1.2"
                     src="#bunny-obj" mtl="#bunny-mtl"></a-obj-model>
-                                
             </a-entity>
-            <a-entity class="face"
+            <!--<a-entity class="face"
               position="0 0.05 0"
             >
               <a-sphere class="eye"
@@ -133,11 +135,24 @@
                 ></a-sphere>
               </a-sphere>
             </a-entity>
-          </a-entity>
+          </a-entity>-->
         </script>
 
         <!-- /Templates -->
       </a-assets>
+
+
+      <!--<a-camera ></a-camera>-->
+      <a-entity id="player"
+                camera="userHeight: 1.6"
+                universal-controls
+                kinematic-body
+                position="15 0 10"
+                jump-ability="maxJumps: 3;
+                              distance: 1;">
+      </a-entity>
+
+
 
       <a-camera></a-camera>
 
@@ -146,8 +161,9 @@
 
 
 
-      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-      <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+
+      <!--<a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>-->
 
 
         <a-entity  obj-model="obj: #easteregg-obj; mtl: #easteregg-mtl" scale=".25 .25 .25" random-rotation="min: 0 0 0; max: 0 90 0;" random-position="min: -10 .8 -10; max: 50 .8 50;" ></a-entity>
